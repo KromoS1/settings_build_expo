@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "configuration-app",
-    "slug": "configuration-app",
+    "name": "configuration App",
+    "slug": "configuration_app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,6 +25,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d22367f4-ea44-487b-a21d-230609dc4339"
+      }
     }
   }
 }
