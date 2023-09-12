@@ -1,0 +1,117 @@
+{
+  "expo": {
+    "name": "IT-incubator Super App", //!
+    "slug": "it_incubator_super", //!
+
+    "version": "1.0.0", //!
+    "sdkVersion": "48.0.0",
+
+    "ios": {
+      "buildNumber": 1, //!
+      "bundleIdentifier": "by.incubator", //! Идентификатор пакета для вашего автономного приложения iOS
+      "infoPlist": {
+        "NSCameraUsageDescription": "Camera permission is required for the app in camera preview mode to scan host tickets.",
+        "NSMicrophoneUsageDescription": "The permission to use audio is required so that the application can notify the user of the result of the ticket scan. (Successful or unsuccessful ticket scanning). There is no audio recording in the application."
+      },
+      "backgroundColor": "#fff",
+      "icon": "",
+      "appStoreUrl": "", //URL-адрес приложения в Apple App Store, если вы развернули его там. используется для ссылки на страницу вашего магазина со страницы вашего проекта Expo
+      "config": {
+        // Используется для хранения ключей, api-key, google и тд !!! не попадает в сборку, нужен только для dev
+      },
+      "supportsTablet": false,
+      "isTabletOnly": false, // true поддерживате только планшеты
+      "usesAppleSignIn": false, //Логическое значение, указывающее, использует ли приложение вход через Apple
+      "splash": {},
+      "jsEngine": "hermes"
+    },
+
+    "android": {
+      "versionCode": 1, //!
+      "package": "by.incubator", //! Идентификатор пакета для вашего автономного приложения google
+      "backgroundColor": "#fff",
+      "icon": "",
+      "userInterfaceStyle": "light",
+
+      "adaptiveIcon": {
+        "monochromeImage": "", //значок появится на главном экране, когда пользователь активирует «Тематические значки» в настройках системы - Android 13+.
+        "foregroundImage": "",
+        "backgroundImage": "",
+        "backgroundColor": ""
+      },
+      "permissions": ["CAMERA", "ACCESS_FINE_LOCATION"],
+      "blockedPermissions": [], //разрешений для блокировки в финальном манифесте, если в процессе сборки нужны разрешения, а после нет
+      "config": {},
+      "playStoreUrl": "", // ссылка на приложение в магазине из аккаунта expo
+			"splash": {},
+
+			"allowBackup": false, // позволяет создавать резервные копии на google диске
+			"softwareKeyboardLayoutMode": "resize" // "pan"  - меняет программную клавиатру
+    },
+
+    "platforms": ["android", "ios"],
+
+    "orientation": "portrait", // "default", "portrait", "landscape"
+    "userInterfaceStyle": "light", // expo-system-ui для работы на  android
+    "backgroundColor": "#fff",
+
+    "icon": "", // путь к картинке
+
+    "splash": {
+      "backgroundColor": "#fff",
+      "resizeMode": "cover", // "cover" | "contain"
+      "image": "path"
+    },
+
+    "jsEngine": "hermes", //'jsc'
+
+    "extra": {
+      // получить значения можно через Constants.expoConfig.extra
+      "eas": {
+        "projectId": "c5d7c151-ec90-4c15-93df-4c0314b2da5f"
+      },
+      "baseApiUrl": "localhost:5001",
+      "logo": "",
+      "timezone": "Europe/Minsk"
+    },
+
+    "updates": {}, // Конфигурация того, как и когда приложение должно запрашивать OTA-обновления JavaScript
+
+    "notification": {
+      "icon": "",
+      "color": "#fee",
+      "iosDisplayInForeground": false, //Отображать ли уведомления, когда приложение находится на переднем плане в iOS
+      
+      "androidMode": "default", // "collapse" | Показать каждое push-уведомление отдельно или свеорнуто в одно
+      "androidCollapsedTitle": "" // заголовок используется для свернутого уведомления
+    },
+
+    "androidStatusBar": {}, // Конфигурация строки состояния на Android.
+    "androidNavigationBar": {},
+
+    "plugins": [
+      "expo-community-flipper",
+      "expo-build-properties",
+      "expo-localization",
+      {
+        "android": {
+          "compileSdkVersion": 33,
+          "targetSdkVersion": 33,
+          "buildToolsVersion": "33.0.0"
+        },
+				"ios": {
+          "deploymentTarget": "14.0"
+        }
+      }
+    ],
+
+    "owner": "krakenhri",
+
+    "description": "Test app",
+    "currentFullName": "",
+    "originalFullName": "",
+    "privacy": "unlisted", //"public", "unlisted", "hidden",
+    "githubUrl": "",
+    "primaryColor": "" //определять цвет приложения в многозадачном режиме, не работает на ios
+  }
+}

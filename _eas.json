@@ -1,0 +1,105 @@
+{
+  "cli": {
+    "version": ">= 3.13.3"
+  },
+  "build": {
+
+    "dev_build": {
+      "extends": "", //наследование другого профиля
+      "credentialsSource": "locale", // использовать локальный сертификат для подписки или удаленный
+      "releaseChannel": "", // для использования expo-updates, позволяет сразу доставить пользователям новый код
+      "channel": "",
+      "distribution": "internal", // "store",
+      "developmentClient": true,
+      "env": {}, //объект для переменных среды
+      "autoIncrement": true, //авто увеличение buildNumber и versionCode
+      "cache": {
+        // предназначена для кэширования значений, требующих большого объема вычислений, например, результатов компиляции (
+      },
+
+      "android": {
+        "withoutCredentials": true, //EAS не потребует от вас настройки учетных данных при создании приложения
+        "image": "", //  Изображение со средой сборки //! почитать
+        "ndk": "", // Версия Android NDK.
+        "autoIncrement": true,
+        "buildType": "apk" // aab
+      },
+
+      "ios": {
+        "simulator": true,
+        "autoIncrement": true,
+        "image": "", //  Изображение со средой сборки //! почитать
+        "bundler": "", //версия сборщика
+        "fastlane": "", //Версия фастлейна
+        "cocoapods": "", // Версия CocoaPods.
+        "scheme": "", //схема проекта Xcode
+        "buildConfiguration": "" // конфигурация сборки проекта Xcode.
+      },
+
+      "base": {
+        "node": "16.14.2",
+        "yarn": "1.22.19",
+        "env": {
+          "EXAMPLE_ENV": "example value"
+        },
+        "android": {
+          "image": "default",
+          "env": {
+            "PLATFORM": "android"
+          }
+        },
+        "ios": {
+          "image": "latest",
+          "env": {
+            "PLATFORM": "ios"
+          }
+        }
+      },
+
+      "dev_build": {
+        "developmentClient": true,
+        "distribution": "internal"
+      },
+
+      "simulator_android": {
+        "extends": "base",
+        "android": {
+          "buildType": "apk"
+        }
+      },
+
+      "simulator_ios": {
+        "ios": {
+          "simulator": true
+        }
+      }
+    }
+  },
+
+  "submit": {
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "", //с ключом сервисного аккаунта, который используется для аутентификации в Google Play //!
+        "track": "beta", // production, beta, alpha, internal //!
+        "releaseStatus": "", // completed, draft, halted, inProgress
+        "changesNotSentForReview": false, // указывает, что изменения, отправленные с этой отправкой, не будут проверены, пока они не будут явно отправлены на проверку из пользовательского интерфейса Google Play Console
+        "applicationId": "" // имя keystore. не актуально если используется локальная подпись приложения
+      },
+
+      "ios": {
+        "bundleIdentifier": "by.incubator",
+        "appleId": "", //имя пользователя Apple ID
+        "appleTeamId": "", //идентификатор вашей команды разработчиков Apple
+        "ascAppId": "", //уникальный номер Apple ID приложения App Store Connect.
+        "ascApiKeyPath": "", //путь к файлу .p8 ключа App Store Connect Api.
+        "ascApiKeyIssuerId": "", //идентификатор издателя вашего ключа App Store Connect Api
+        "ascApiKeyId": "", // идентификатор ключа вашего ключа App Store Connect Api
+
+        "sku": "", //не обязательный - уникальный идентификатор для вашего приложения, который не виден в App Store
+        "language": "",
+        "companyName": "", //необходимое только для первой отправки любого приложения
+        "appName": ""
+      }
+    }
+  }
+}
