@@ -43,10 +43,10 @@
       "blockedPermissions": [], //разрешений для блокировки в финальном манифесте, если в процессе сборки нужны разрешения, а после нет
       "config": {},
       "playStoreUrl": "", // ссылка на приложение в магазине из аккаунта expo
-			"splash": {},
+      "splash": {},
 
-			"allowBackup": false, // позволяет создавать резервные копии на google диске
-			"softwareKeyboardLayoutMode": "resize" // "pan"  - меняет программную клавиатру
+      "allowBackup": false, // позволяет создавать резервные копии на google диске
+      "softwareKeyboardLayoutMode": "resize" // "pan"  - меняет программную клавиатру
     },
 
     "platforms": ["android", "ios"],
@@ -81,7 +81,7 @@
       "icon": "",
       "color": "#fee",
       "iosDisplayInForeground": false, //Отображать ли уведомления, когда приложение находится на переднем плане в iOS
-      
+
       "androidMode": "default", // "collapse" | Показать каждое push-уведомление отдельно или свеорнуто в одно
       "androidCollapsedTitle": "" // заголовок используется для свернутого уведомления
     },
@@ -99,7 +99,7 @@
           "targetSdkVersion": 33,
           "buildToolsVersion": "33.0.0"
         },
-				"ios": {
+        "ios": {
           "deploymentTarget": "14.0"
         }
       }
