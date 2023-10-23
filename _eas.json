@@ -22,56 +22,66 @@
         "image": "", //  Изображение со средой сборки //! почитать
         "ndk": "", // Версия Android NDK.
         "autoIncrement": true,
-        "buildType": "apk" // aab
+        "buildType": "apk", // "app-bundle"
+
+        "resourceClass": "default", 
+        // large - 8 ЦП, 32 ГБ ОЗУ (тип машины Google Cloud n2-standard-8)
+        //medium - 4 ЦП, 16 ГБ ОЗУ (тип машины Google Cloud n2-standard-4)
+
+        "gradleCommand": ":app:assembleDebug",
+        "applicationArchivePath": "" // Путь (или шаблон), по которому EAS Build будет искать архив приложения. 
       },
 
       "ios": {
+         "withoutCredentials": true,
+
         "simulator": true,
         "autoIncrement": true,
+
         "image": "", //  Изображение со средой сборки //! почитать
+        
         "bundler": "", //версия сборщика
         "fastlane": "", //Версия фастлейна
         "cocoapods": "", // Версия CocoaPods.
         "scheme": "", //схема проекта Xcode
-        "buildConfiguration": "" // конфигурация сборки проекта Xcode.
-      },
+        "buildConfiguration": "", // конфигурация сборки проекта Xcode.
 
-      "base": {
-        "node": "16.14.2",
-        "yarn": "1.22.19",
+        "resourceClass": "default", 
+        "applicationArchivePath": ""
+      }
+    },
+
+    "base": {
+      "node": "16.14.2",
+      "yarn": "1.22.19",
+      "env": {
+        "EXAMPLE_ENV": "example value"
+      },
+      "android": {
+        "image": "default",
         "env": {
-          "EXAMPLE_ENV": "example value"
-        },
-        "android": {
-          "image": "default",
-          "env": {
-            "PLATFORM": "android"
-          }
-        },
-        "ios": {
-          "image": "latest",
-          "env": {
-            "PLATFORM": "ios"
-          }
+          "PLATFORM": "android"
         }
       },
-
-      "dev_build": {
-        "developmentClient": true,
-        "distribution": "internal"
-      },
-
-      "simulator_android": {
-        "extends": "base",
-        "android": {
-          "buildType": "apk"
+      "ios": {
+        "image": "latest",
+        "env": {
+          "PLATFORM": "ios"
         }
-      },
+      }
+    },
 
-      "simulator_ios": {
-        "ios": {
-          "simulator": true
-        }
+    "simulator_android": {
+      "extends": "base",
+      "android": {
+        "buildType": "apk"
+      }
+    },
+
+    "simulator_ios": {
+      "extends": "base",
+      "ios": {
+        "simulator": true
       }
     }
   },
@@ -101,5 +111,6 @@
         "appName": ""
       }
     }
-  }
+  },
+  "update":{}
 }

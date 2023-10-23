@@ -1,0 +1,38 @@
+{
+  "cli": {
+    "version": ">= 3.13.3"
+  },
+  "build": {
+    "base": {
+      "node": "18.17.1",
+      "bun": "1.0.0",
+      "android": {
+        "buildType": "apk",
+        "env": {
+          "APP_ENV": "VARIANT_2"
+        }
+      },
+      "ios": {
+        "simulator": true,
+        "env": {
+          "APP_ENV": "VARIANT_1"
+        }
+      },
+      "developmentClient": false,
+      "distribution": "internal"
+    },
+
+    "test_android": {
+      "extends": "base"
+    },
+
+    "test_ios": {
+      "extends": "base"
+    },
+
+    "dev_android": {
+      "extends": "base",
+      "developmentClient": true
+    }
+  }
+}

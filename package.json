@@ -4,11 +4,12 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "part_1": "APP_ENV=VARIANT_1 expo start --android",
-    "part_2": "APP_ENV=VARIANT_2 expo start --android"
-  },
+    "part_2": "APP_ENV=VARIANT_2 expo start --android --dev-client"
+  },  
   "dependencies": {
     "expo": "~49.0.10",
     "expo-constants": "^14.4.2",
+    "expo-dev-client": "^2.4.11",
     "expo-localization": "^14.5.0",
     "expo-status-bar": "~1.6.0",
     "react": "18.2.0",

@@ -6,8 +6,8 @@ const version = "1.0.0";
 const sdkVersion = "49.0.0";
 
 const Identifier = {
-  main: "part_1",
-  second: "part_2",
+  main: "configure_app_part_1.com",
+  second: "configure_app_part_2.com",
 };
 
 function updateConfig(identifier) {
@@ -18,7 +18,7 @@ function updateConfig(identifier) {
       sdkVersion,
       version,
       versionCode,
-      package: identifier,
+      android: { package: identifier, },
       extra: {
         ...app_static_conf.expo.extra,
         name_app: `${app_static_conf.expo.name} ${identifier}`,
